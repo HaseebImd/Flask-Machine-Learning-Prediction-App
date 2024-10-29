@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Yinka Enoch Adedokun">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <title>Prediction</title>
+    <style>
+        /* Set full height for the section and background color */
+        body, html {
+            height: 100%;
+            margin: 0;
+        }
+
+        .full-height {
+            height: 100vh; /* Use viewport height */
+            background-color: #f8f9fa; /* Light background color */
+        }
+    </style>
+</head>
+
+<body>
+    <section class="full-height d-flex align-items-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5 col-xxl-4">
+                    <div class="card border border-light-subtle rounded-4">
+                        <div class="card-body p-2 p-md-4 p-xl-5">
+                            <div class="alert alert-success" role="alert">
+                                <h3 class="text-center">Prediction Result</h3>
+                            </div>
+                            <div class="text-center">
+                                <p>Reed Space Prediction: {{ reed_space }}</p>
+                                <p>Reed Count Prediction: {{ reed_count }}</p>
+                            </div>
+                            <div class="d-grid gap">
+                                <a href="/" class="btn btn-primary">Make Another Prediction</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

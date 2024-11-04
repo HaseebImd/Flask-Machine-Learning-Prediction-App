@@ -13,8 +13,14 @@ lgbm_weft_model = joblib.load("lgbm_weft_model.pkl")
 
 
 # Define the default route
-@app.route("/", methods=["GET", "POST"])
+@app.route("/", methods=["GET"])
 def index():
+    return render_template("home.html")
+
+
+# Define the predict route
+@app.route("/predict", methods=["GET", "POST"])
+def predict():
     if request.method == "POST":
         # Extract input values from the form
         input_data = [
@@ -28,7 +34,7 @@ def index():
 
         # Check if any input value is less than 1 or greater than 10000
         if any(value < 1 or value > 10000 for value in input_data):
-            return render_template("home.html", error="Invalid input.")
+            return render_template("predict.html", error="Invalid input.")
 
         # Convert inputs to a numpy array
         input_data = np.array([input_data])
@@ -71,7 +77,8 @@ def index():
             )
         )
 
-    return render_template("home.html")
+    # If the request method is GET, render the predict.html page
+    return render_template("predict.html")
 
 
 # Define the result route

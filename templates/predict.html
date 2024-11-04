@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}Make-Predictions{% endblock %}
+{% block content %}
+    <section class="shop-section section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-5 col-12 me-auto mb-5"></div>
+                <div class="col-lg-6 col-md-6 col-12">
+                    {% if error %}
+                    <div class="alert alert-danger" role="alert">{{ error }}</div>
+                    {% endif %}
+                        <form class=" custom-block featured-custom-block custom-form contact-form" action="/predict" method="POST" role="form">
+                            <div class="input-group align-items-center">
+                                <label for="WARP">WARP</label>
+                                <input type="number" name="WARP" id="WARP" class="form-control"  required>
+                            </div>
+                            <div class="input-group align-items-center">
+                                <label for="WEFT">WEFT</label>
+                                <input type="number" name="WEFT" id="WEFT" class="form-control"  required>
+                            </div>
+                            <div class="input-group align-items-center">
+                                <label for="ENDS">ENDS</label>
+                                <input type="number" name="ENDS" id="ENDS" class="form-control" required>
+                            </div>
+                            <div class="input-group align-items-center">
+                                <label for="PICKS">PICKS</label>
+                                <input type="number" name="PICKS" id="PICKS" class="form-control" required>
+                            </div>
+                            <div class="input-group align-items-center">
+                                <label for="Width_a">Width</label>
+                                <input type="number" name="Width_a" id="Width_a" class="form-control" required>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-3 col-md-3 col-3 align-items-center">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-6 align-items-center">
+                                    <button type="submit" class="form-control">Predict</button>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-3 align-items-center">
+                                </div>
+                            </div>
+                        </form>
+                </div>
+                <div class="col-lg-3 col-md-5 col-12 me-auto mb-5"></div>
+            </div>
+        </div>
+    </section>
+
+
+
+{% endblock %}

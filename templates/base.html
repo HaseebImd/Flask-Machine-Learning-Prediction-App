@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="description" content="" />
+    <meta name="author" content="Tooplate" />
+
+   <title>{% block title %}{% endblock %}</title>
+
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;300;400;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Including static CSS files -->
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet" />
+    <link href="{{ url_for('static', filename='css/bootstrap-icons.css') }}" rel="stylesheet" />
+    <link href="{{ url_for('static', filename='css/owl.carousel.min.css') }}" rel="stylesheet" />
+    <link href="{{ url_for('static', filename='css/tooplate-moso-interior.css') }}" rel="stylesheet" />
+
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg bg-light fixed-top shadow-lg">
+      <div class="container">
+        <a class="navbar-brand" href="/">Tex<span class="tooplate-red">ti</span><span class="tooplate-green">le</span></a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link click-scroll" href="/#section_1">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link click-scroll" href="/#section_2">Our Mission</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link click-scroll" href="/#section_3" id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Methdology</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="/predict" id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Predicions</a>
+
+              <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
+                <!-- <li><a class="dropdown-item" href="shop-listing.html">Shop Listing</a></li> -->
+
+                <li>
+                  <a class="dropdown-item" href="/predict">Make Prediction</a>
+                </li>
+              </ul>
+            </li>
+
+
+
+
+
+            <li class="nav-item">
+              <a class="nav-link click-scroll" href="/#section_5">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <main>
+      {% block content %}
+      {% endblock %}
+    </main>
+
+    <footer class="site-footer section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-5 col-4 mb-3">
+            <br />
+            <h3><a href="index.html" class="custom-link mb-1">National Textile University</a></h3>
+
+            <p class="text-white">Since 1959, Innovative & Lead</p>
+
+            <p class="text-white">
+              <a href="#" target="_parent">Lahore - Sheikhupura - Faisalabad Rd, Mana Wala, Manawala, Faisalabad, Punjab</a>
+            </p>
+          </div>
+
+          <div class="col-lg-4 col-md-4 col-4 ms-lg-auto mb-3">
+            <br />
+            <h3 class="text-white mb-3">Address</h3>
+
+            <p class="text-white mt-2">
+              <i class="bi-geo-alt"></i>
+              National Textile University: Sheikhupura Road, Faisalabad 37610, Pakistan
+            </p>
+          </div>
+
+          <div class="col-lg-4 col-md-4 col-12 mb-3">
+            <br />
+            <h3 class="text-white mb-3">Contact Info</h3>
+
+            <p class="text-white mb-1">
+              <i class="bi-telephone me-1"></i>
+
+              <a href="#" class="text-white">+92 (041) 9230081-90, Ext 158</a>
+            </p>
+
+            <p class="text-white mb-0">
+              <i class="bi-envelope me-1"></i>
+
+              <a href="#" class="text-white">info@ntu.edu.pk</a>
+            </p>
+          </div>
+
+          <div class="col-lg-6 col-md-7 copyright-text-wrap col-12 d-flex flex-wrap align-items-center mt-4 ms-auto">
+            <p class="copyright-text mb-0 me-4">Copyright © 2024. All Rights Reserved. National Textile University. | Updated 4th Nov, 2024</p>
+
+            <ul class="social-icon">
+              <li class="social-icon-item">
+                <a href="#" class="social-icon-link social-icon-twitter bi-twitter"></a>
+              </li>
+
+              <li class="social-icon-item">
+                <a href="#" class="social-icon-link social-icon-facebook bi-facebook"></a>
+              </li>
+
+              <li class="social-icon-item">
+                <a href="#" class="social-icon-link social-icon-instagram bi-instagram"></a>
+              </li>
+
+              <li class="social-icon-item">
+                <a href="#" class="social-icon-link social-icon-pinterest bi-pinterest"></a>
+              </li>
+
+              <li class="social-icon-item">
+                <a href="#" class="social-icon-link social-icon-whatsapp bi-whatsapp"></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+    <!-- JAVASCRIPT FILES -->
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/click-scroll.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.backstretch.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+
+  </body>
+</html>

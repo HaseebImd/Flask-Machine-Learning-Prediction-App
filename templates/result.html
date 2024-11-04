@@ -1,51 +1,61 @@
-<!doctype html>
-<html lang="en">
+{% extends "base.html" %}
+{% block title %}Result{% endblock %}
+{% block content %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="Yinka Enoch Adedokun">
-    <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <title>Prediction</title>
-    <style>
-        /* Set full height for the section and background color */
-        body, html {
-            height: 100%;
-            margin: 0;
-        }
+<section class="featured-section-result section-padding">
+    <div class="container">
+        <div class="row">
 
-        .full-height {
-            height: 100vh; /* Use viewport height */
-            background-color: #f8f9fa; /* Light background color */
-        }
-    </style>
-</head>
+            <div class="col-lg-5 col-12">
+                <div class="custom-block featured-custom-block">
+                    <h2 class="mt-2 mb-4">Outcome</h2>
+                     <hr>
+                    <form class="custom-form contact-form" action="/predict" method="GET" role="form">
+                    <div class="d-flex">
+                        <div>
+                            <p class="mb-2">
+                                 <strong class="d-inline">
+                                    Warp Contraction:
+                                </strong>
+                                {{ warp_contraction }}
+                            </p>
+                            <p class="mb-2">
+                                 <strong class="d-inline">
+                                    Weft Contraction:
+                                </strong>
+                                {{ weft_contraction }}
+                            </p>
+                            <p class="mb-2">
+                                 <strong class="d-inline">
+                                    Reed Space Prediction:
+                                </strong>
+                                {{  reed_space  }}
+                            </p>
 
-<body>
-    <section class="full-height d-flex align-items-center">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5 col-xxl-4">
-                    <div class="card border border-light-subtle rounded-4">
-                        <div class="card-body p-2 p-md-4 p-xl-5">
-                            <div class="alert alert-success" role="alert">
-                                <h3 class="text-center">Prediction Result</h3>
-                            </div>
-                            <div class="text-center">
-                                <p>Warp Contraction: {{ warp_contraction }}</p>
-                                <p>Weft Contraction: {{ weft_contraction }}</p>
-                                <p>Reed Space Prediction: {{ reed_space }}</p>
-                                <p>Reed Count Prediction: {{ reed_count }}</p>
-                            </div>
-                            <div class="d-grid gap">
-                                <a href="/" class="btn btn-primary">Make Another Prediction</a>
-                            </div>
+                            <p class="mb-2">
+                                 <strong class="d-inline">
+                                    Reed Count Prediction:
+                                </strong>
+                                {{  reed_count  }}
+                            </p>
                         </div>
                     </div>
+                        <hr>
+                        <div class="row">
+                                <div class="col-lg-12 col-md-12 col-12 align-items-center">
+                                    <button type="submit" class="form-control">Continue...</button>
+                                </div>
+
+                            </div>
+                    </form>
                 </div>
             </div>
-        </div>
-    </section>
-</body>
 
-</html>
+        </div>
+    </div>
+</section>
+
+
+
+
+{% endblock %}
